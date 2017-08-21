@@ -5,7 +5,7 @@
  */
 package circlebuffer;
 
-import sun.awt.X11.XConstants;
+//import sun.awt.X11.XConstants;
 
 /**
  *
@@ -33,7 +33,7 @@ public class CircleBuffer {
         CircleBuffer cb = new CircleBuffer();
         
         for (int i=2; i <= 100; i++) {
-            cb.pushItem(i);    
+            cb.push(i);    
         }
         
         /*
@@ -67,7 +67,7 @@ public class CircleBuffer {
         return 0 == this.availableSlots;
     }
     
-    public void pushItem(Object item) {
+    public void push(Object item) {
         if (isEmpty())
             pushFirst(item);
         else if (isFull())
